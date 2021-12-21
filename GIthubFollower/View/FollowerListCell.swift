@@ -17,9 +17,6 @@ class FollowerListCell: UICollectionViewCell {
     
     static let reuseID = String(describing: FollowerListCell.self)
     
-   
-    
-    
     func set(follower: Follower) {
         cellLabel.text = follower.login
         NetworkManager.shared.downloadImage(from: follower.avatarUrl) {[weak self] uiImage in

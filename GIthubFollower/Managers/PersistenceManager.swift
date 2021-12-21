@@ -8,11 +8,8 @@
 import Foundation
 
 enum PersistenceActionType {
-    
     case add, remove
-    
 }
-
 
 enum PersistenceManager {
     
@@ -39,7 +36,6 @@ enum PersistenceManager {
                 case .remove:
                     retrievedFavorites.removeAll { $0.login == favorite.login }
                 }
-                
                 completed(save(favorites: retrievedFavorites))
                 
             case .failure(let error):
@@ -47,7 +43,6 @@ enum PersistenceManager {
             }
         }
     }
-    
     
     static func retrieveFavorites(completed: @escaping (Result<[Follower], GFError>) -> Void) {
         
@@ -64,8 +59,7 @@ enum PersistenceManager {
             completed(.failure(.unableToFavorite))
         }
     }
-    
-    
+ 
     static func save(favorites: [Follower]) -> GFError? {
         
         do {
@@ -76,7 +70,6 @@ enum PersistenceManager {
         } catch {
             return .unableToFavorite
         }
-        
-     }
+    }
     
 }

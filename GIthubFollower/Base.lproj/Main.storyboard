@@ -26,13 +26,14 @@
                                     <constraint firstAttribute="height" constant="250" id="Oa2-dP-h3U"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" textAlignment="center" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-Wv-hnx">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" textAlignment="center" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-Wv-hnx">
                                 <rect key="frame" x="50" y="449" width="314" height="60"/>
+                                <color key="backgroundColor" red="0.74253009177198648" green="0.92864697388928341" blue="0.91035982968564033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ksw-to-s2s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCr-pp-Y2C">
                                 <rect key="frame" x="50" y="762" width="314" height="50"/>
@@ -42,9 +43,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Get Followers">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.32156862745098036" green="0.81960784313725488" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -53,7 +54,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.76780927963360579" green="1" blue="0.98178797612778779" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.13578893463451402" green="1" blue="0.32232857016092509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LXQ-hc-vVs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="0vo-sY-xnP"/>
@@ -72,7 +74,7 @@
                     <navigationItem key="navigationItem" id="KLY-MN-68o"/>
                     <connections>
                         <outlet property="searchTextfield" destination="UYh-Wv-hnx" id="8Vw-nV-6YD"/>
-                        <segue destination="CEt-9w-i3b" kind="push" identifier="showFollowerListVC" id="xfa-Cv-OKf"/>
+                        <segue destination="CEt-9w-i3b" kind="show" identifier="showFollowerListVC" id="xfa-Cv-OKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,9 +87,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1gy-Vq-for" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="29v-gI-ntK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.backward" catalog="system" id="29v-gI-ntK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Button"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <color key="textColor" red="0.29518996710000001" green="0.75440007610000004" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -108,7 +118,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KrQ-A9-G0L">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Background"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LIz-sJ-aBE">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -159,7 +169,8 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YfP-at-eTG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KrQ-A9-G0L" firstAttribute="leading" secondItem="YfP-at-eTG" secondAttribute="leading" id="185-ie-3Pe"/>
                             <constraint firstItem="KrQ-A9-G0L" firstAttribute="top" secondItem="YfP-at-eTG" secondAttribute="top" id="UmE-yl-DwF"/>
@@ -176,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1446" y="78"/>
         </scene>
-        <!--User InfoVC-->
+        <!--Title-->
         <scene sceneID="34b-zU-TAf">
             <objects>
                 <viewController storyboardIdentifier="UserInfoVC" id="OCC-cz-cob" customClass="UserInfoVC" customModule="GIthubFollower" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,7 +212,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GfJ-ZL-cff">
-                                <rect key="frame" x="40" y="386" width="344" height="97"/>
+                                <rect key="frame" x="40" y="386" width="344" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2l-TF-7mM">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="20.5"/>
@@ -221,17 +232,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7t-Bz-khK">
-                                        <rect key="frame" x="0.0" y="51" width="344" height="20.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20.5" id="iZP-mg-vs1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3Q-zW-7GF">
-                                        <rect key="frame" x="0.0" y="76.5" width="344" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="51" width="344" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="oqw-uo-net"/>
                                         </constraints>
@@ -242,8 +244,8 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpX-hq-HsC">
-                                <rect key="frame" x="70" y="523" width="274" height="50"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <rect key="frame" x="70" y="497.5" width="274" height="50"/>
+                                <color key="backgroundColor" name="Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IlE-um-YL6"/>
                                 </constraints>
@@ -252,6 +254,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <buttonConfiguration key="configuration" style="plain" title="Visit Github profile">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -260,7 +263,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0mB-S8-M1c"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="lpX-hq-HsC" firstAttribute="leading" secondItem="0mB-S8-M1c" secondAttribute="leading" constant="70" id="4Nl-Xq-Ybu"/>
                             <constraint firstItem="ajN-hA-bSO" firstAttribute="top" secondItem="jPQ-Na-IEg" secondAttribute="bottom" constant="25" id="7E1-Ct-y4w"/>
@@ -275,10 +278,12 @@
                             <constraint firstItem="lpX-hq-HsC" firstAttribute="top" secondItem="GfJ-ZL-cff" secondAttribute="bottom" constant="40" id="z5g-NC-IS9"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="AOm-ch-z9E"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bio" destination="u2l-TF-7mM" id="gC5-Y8-eQn"/>
                         <outlet property="button" destination="lpX-hq-HsC" id="nQb-ZF-DOv"/>
-                        <outlet property="createAt" destination="r7t-Bz-khK" id="MOi-8k-T8A"/>
                         <outlet property="followers" destination="E3Q-zW-7GF" id="09P-Ez-hTW"/>
                         <outlet property="location" destination="vEb-Ie-bNJ" id="DZN-O4-NlQ"/>
                         <outlet property="name" destination="ajN-hA-bSO" id="brU-gV-8t0"/>
@@ -290,11 +295,16 @@
             <point key="canvasLocation" x="2295.6521739130435" y="77.678571428571431"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="Button"/>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="avatar-placeholder" width="300" height="300"/>
         <image name="gh-logo" width="744" height="803"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Background">
+            <color red="0.7686274509803922" green="1" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Button">
+            <color red="0.32156862745098042" green="0.81960784313725488" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

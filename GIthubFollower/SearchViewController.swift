@@ -23,10 +23,7 @@ class SearchVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
-    
 
-  
-    
     @IBAction func getFollowerTapped(_ sender: UIButton) {
         guard isUsernameEntered else {
             showAlert(title: "Username missing", message: "Please enter username.", buttonTitle: "OK")
@@ -34,19 +31,13 @@ class SearchVC: UIViewController {
         }
         performSegue(withIdentifier: FollowerListVC.segueIdentifier, sender: nil)
     }
-    
-    
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == FollowerListVC.segueIdentifier {
             guard let followerListVC = segue.destination as? FollowerListVC else  { return }
             followerListVC.userName = searchTextfield.text
-            
         }
-        
     }
-   
-    
 }
 
 extension SearchVC: UITextFieldDelegate {
@@ -58,6 +49,5 @@ extension SearchVC: UITextFieldDelegate {
         performSegue(withIdentifier: FollowerListVC.segueIdentifier, sender: nil)
         return true
     }
-    
-   
+  
 }
