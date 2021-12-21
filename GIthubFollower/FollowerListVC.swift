@@ -3,10 +3,8 @@
 //  GIthubFollower
 //
 //  Created by VINH HOANG on 17/12/2021.
-//
 
 import UIKit
-
 
 class FollowerListVC: UIViewController {
    
@@ -61,7 +59,6 @@ class FollowerListVC: UIViewController {
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         initialSnapshot.appendSections([.main])
         initialSnapshot.appendItems(followers, toSection: .main)
-        
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
@@ -89,22 +86,18 @@ class FollowerListVC: UIViewController {
                 self.updateData(on: self.followers)
                 
             case .failure(let error):
-                //                self.presentGFAlertOnMainThread(title: "Bad stuff happend", message: error.rawValue, buttonTitle: "Ok")
                 DispatchQueue.main.async {
                     self.showAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
-                    
                 }
             }
         }
     }
-    
 
     func updateData(on followers: [Follower]) {
         var snapShot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapShot.appendSections([.main])
         snapShot.appendItems(followers)
-        
-        dataSource.apply(snapShot, animatingDifferences: true)   // WWDC said could run on background -> TODO: Try run on background
+        dataSource.apply(snapShot, animatingDifferences: true)
       
     }
     
@@ -146,8 +139,6 @@ extension FollowerListVC: UICollectionViewDelegate {
         present(destiNavigationVC, animated: true)
     }
 }
-
-
 
 extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
